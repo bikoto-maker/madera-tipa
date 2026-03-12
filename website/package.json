@@ -1,0 +1,29 @@
+{
+  "name": "tipa-madera-bolivia-website",
+  "version": "2.0.0",
+  "description": "Website profesional para exportación de madera Tipa de Bolivia - Envíos FOB",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server",
+    "dev": "http-server -p 8000 -o",
+    "build": "echo 'Website static - No build needed'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "madera",
+    "bolivia",
+    "export",
+    "website",
+    "timber",
+    "wood"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/maderas-bolivianas.git"
+  }
+}

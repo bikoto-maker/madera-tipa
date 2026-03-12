@@ -1,0 +1,440 @@
+/*
+    GUÍA DE PERSONALIZACIÓN CSS
+    
+    Este archivo contiene estilos adicionales opcionales para personalizar más
+    el website. Copia lo que necesites a style.css según tus preferencias.
+*/
+
+/* ============================================
+   TEMAS ALTERNATIVOS DE COLOR
+   ============================================ */
+
+/* Tema: Tropical (más verde) */
+:root.tema-tropical {
+    --primary-color: #1B5E20;
+    --primary-dark: #0D3817;
+    --primary-light: #4CAF50;
+    --secondary-color: #FF6F00;
+}
+
+/* Tema: Elegante (más oscuro) */
+:root.tema-elegante {
+    --primary-color: #3E2723;
+    --primary-dark: #1A0E0A;
+    --primary-light: #8D6E63;
+    --secondary-color: #1B5E20;
+}
+
+/* ============================================
+   ANIMACIONES ADICIONALES
+   ============================================ */
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ============================================
+   ESTILOS ALTERNATIVOS PARA GALERÍA
+   ============================================ */
+
+/* Efecto masonry (si tienes muchas imágenes) */
+.galeria-grid-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item-masonry {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: auto;
+}
+
+.galeria-item-masonry:nth-child(1) {
+    grid-column: span 1;
+}
+
+.galeria-item-masonry:nth-child(2) {
+    grid-column: span 1;
+}
+
+.galeria-item-masonry:nth-child(3) {
+    grid-column: span 1;
+}
+
+/* ============================================
+   FILTROS DE IMAGEN
+   ============================================ */
+
+.galeria-sepia {
+    filter: sepia(0.3);
+}
+
+.galeria-sepia:hover {
+    filter: sepia(0) brightness(0.7);
+}
+
+.galeria-vintage {
+    filter: contrast(1.1) saturate(0.8);
+}
+
+.galeria-vintage:hover {
+    filter: contrast(1.1) saturate(0.8) brightness(0.8);
+}
+
+/* ============================================
+   EFECTOS DE TEXTO MEJORADOS
+   ============================================ */
+
+.texto-gradiente {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.texto-sombra {
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.1),
+        4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.texto-contorno {
+    -webkit-text-stroke: 1px var(--primary-dark);
+}
+
+/* ============================================
+   CARDS CON EFECTOS AVANZADOS
+   ============================================ */
+
+.card-elevado {
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-elevado:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+.card-borde-animado {
+    position: relative;
+    border: 2px solid transparent;
+    background-image: 
+        linear-gradient(var(--white), var(--white)),
+        linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.card-borde-animado:hover {
+    background-image: 
+        linear-gradient(var(--light-bg), var(--light-bg)),
+        linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* ============================================
+   BOTONES CON ESTILOS ALTERNATIVOS
+   ============================================ */
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-ghost:hover {
+    color: var(--primary-dark);
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   EFECTOS DE FONDO
+   ============================================ */
+
+.fondo-textura {
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 0, 0, 0.05) 10px, rgba(0, 0, 0, 0.05) 20px);
+}
+
+.fondo-puntos {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.fondo-rayas {
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 0, 0, 0.03) 10px,
+        rgba(0, 0, 0, 0.03) 20px
+    );
+}
+
+/* ============================================
+   TABLAS MEJORADAS
+   ============================================ */
+
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+.tabla-datos thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+
+.tabla-datos th,
+.tabla-datos td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-datos tbody tr:hover {
+    background-color: var(--light-bg);
+}
+
+.tabla-datos tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* ============================================
+   BADGES Y ETIQUETAS
+   ============================================ */
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: var(--primary-light);
+    color: var(--white);
+    margin: 0.25rem;
+}
+
+.badge-success {
+    background-color: #4CAF50;
+}
+
+.badge-warning {
+    background-color: #FF9800;
+}
+
+.badge-danger {
+    background-color: #F44336;
+}
+
+.badge-info {
+    background-color: #2196F3;
+}
+
+/* ============================================
+   TOOLTIPS
+   ============================================ */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    border-bottom: 1px dotted var(--primary-color);
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--primary-dark) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ============================================
+   COMPONENTES DE PROGRESO
+   ============================================ */
+
+.barra-progreso {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.barra-progreso-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    transition: width 0.3s ease;
+}
+
+/* ============================================
+   MEDIA QUERIES ADICIONALES
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .contacto-grid,
+    .nosotros-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .nosotros-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   IMPRESIÓN
+   ============================================ */
+
+@media print {
+    .navbar,
+    .cta-button,
+    .contacto-form {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        color: black;
+    }
+    
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+/* ============================================
+   MODO OSCURO (opcional)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e0e0e0;
+        --light-bg: #1e1e1e;
+        --white: #121212;
+    }
+    
+    body {
+        background-color: #121212;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+}
